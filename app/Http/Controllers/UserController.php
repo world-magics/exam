@@ -10,7 +10,19 @@ class UserController extends Controller
         return 'Controllerdan yuborish';
     }
     public function show($user){
-        return 'Tanlangan user: '.$user;
+
+        // return view('users.show',[
+        //     'name'=>'Sherzod',
+        //     'id'=>$user
+        //                         ]);
+        // return view('users.show')->with([
+        //           'name'=>'Sherzod',
+        //           'id'=>$user
+        // ]);
+        return view('users.show')
+        ->with('name','Sherzod')
+        ->with('id',$user);
+        // return 'Tanlangan user: '.$user;
     }
     public function create(){
         return view('users.create');
